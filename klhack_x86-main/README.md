@@ -1,8 +1,8 @@
-# Ayushman Bharat Fraud Detection Agent - Stage 1 (AyushGuard)
+# Ayushman Bharat Fraud Detection Agent - Stage 1 (SurakshaNet)
 
 ## 🏥 Project Overview
 
-**AyushGuard** is an advanced, production-grade fraud detection system designed for the Ayushman Bharat National Health Mission. It implements sophisticated machine learning models combined with regulatory rule-based heuristics to detect fraudulent claim patterns, false billing, and suspicious hospital behavior across India's healthcare providers.
+**SurakshaNet** is an advanced, production-grade fraud detection system designed for the Ayushman Bharat National Health Mission. It implements sophisticated machine learning models combined with regulatory rule-based heuristics to detect fraudulent claim patterns, false billing, and suspicious hospital behavior across India's healthcare providers.
 
 The system processes **94,500+ claim records** in real-time, utilizing ensemble anomaly detection (Isolation Forest + Local Outlier Factor), blockchain-based immutable audit trails, and quantum-inspired entropy generation for enhanced security.
 
@@ -119,6 +119,41 @@ External Integrations:
 - **Hospital Prioritization**: Risk-ranked list for audit team intervention
 - **Exportable Formats**: PDF/text reports for regulatory compliance
 - **Timestamped Records**: Immutable audit trail with blockchain verification
+
+---
+
+## 🔗 SurakshaNet Blockchain Integration
+
+### Algorand Network Details
+- **Network**: Algorand TestNet (AlgoNode Public Gateway)
+- **ALGOD_ADDRESS**: `https://testnet-api.algonode.cloud`
+- **SDK**: py-algorand-sdk 2.0.0+
+
+### Transaction Flow
+
+```python
+# 1. Initialize Algorand client with 25-word mnemonic
+client = AlgorandClient(sender_mnemonic="...")
+
+# 2. Generate report hash for SurakshaNet verification
+report_hash = hashlib.sha256(report_text.encode()).hexdigest()
+
+# 3. Create payment transaction (0 ALGO to self)
+# Encode fraud metadata in transaction note (max 1KB)
+
+# 4. Sign transaction with private key
+# 5. Submit to TestNet
+# 6. Retrieve transaction ID (TxID)
+
+# Result: Immutable, timestamped audit trail on blockchain
+```
+
+### SurakshaNet Metadata Stored On-Chain
+- **Report Summary**: Claim count, suspicious patterns flagged
+- **SHA-256 Hash**: Complete report fingerprint
+- **Timestamp**: UTC timestamp of analysis
+- **Quantum Seal Token**: Entropy-based uniqueness identifier
+- **Hospital Network ID**: Anonymized facility identifier
 
 ---
 
