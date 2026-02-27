@@ -6,7 +6,7 @@
 
 The system processes **94,500+ claim records** in real-time, utilizing ensemble anomaly detection (Isolation Forest + Local Outlier Factor), blockchain-based immutable audit trails, and quantum-inspired entropy generation for enhanced security.
 
----
+----
 
 ## 🏗️ System Architecture
 
